@@ -1,0 +1,21 @@
+body{
+  font-size:30px;
+  font-family:'楷体';
+}
+
+span{
+  color:red;
+}
+
+input[type="textbox"]{
+  height:30px;
+  width:300px;
+  font-size:30px;
+}
+
+.rectangle-calc{
+  font-size:25px;
+  margin-left:110px;
+  margin-top:10px;
+  margin-bottom:10px;
+}

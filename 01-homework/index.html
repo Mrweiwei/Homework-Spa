@@ -3,23 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>calculator</title>
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <div class="rectangle">
-  <label for="">宽度：</label>
-  <input class="rectangle-width" type="textbox">
+  <label>宽度：</label>
+  <input class="rectangle-width" type="textbox" data-label="宽度" autofocus >
+  <span class="h">*</span>
   <br>
   <lable>高度：</lable>
-  <input class="rectangle-height" type="textbox">
+  <input class="rectangle-height" type="textbox" data-label="高度" autofocus >
+  <span class="h">*</span>
   <br>
-  <lable>计算</lable>
-  <input class="rectangle-calcp" type="button">
+  <input class="rectangle-calc" type="button" value="计算">
   <br>
   <lable>周长：</lable>
-  <input class="rectangle-perimeter" type="textbox">
+  <input class="rectangle-perimeter" type="textbox" disabled>
   <br>
   <lable>面积：</lable>
-  <input class="rectangle-area" type="textbox">
+  <input class="rectangle-area" type="textbox" disabled> 
 </div>
 </body>
-</html>
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="js/index.js"></script>
+ </html>
