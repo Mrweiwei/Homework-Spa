@@ -1,0 +1,9 @@
+body{
+  font-family:'楷体';
+  font-size:30px;
+}
+
+#bar{
+  background-color:yellow;
+  width:400px;
+}

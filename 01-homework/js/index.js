@@ -1,75 +1,36 @@
-$(function() {
-    var $width = $('.rectangle-width');
-      var $height = $('.rectangle-height');
-        var $calc = $('.rectangle-calc');
+var width=document.getElementById('rectangle-width');
+var height=document.getElementById('rectangle-height');
+var calc=document.getElementById('rectangle-calc');
 
-        $calc.click(function() {
-              var width = $width.val();
-                  var height = $height.val();
 
-                      $('.rectangle-perimeter').val(perimeter(width, height));
-                          $('.rectangle-area').val(area(width, height));
-                            
-        });
+calc.onclick=function(){
+  var p=document.getElementById('rectangle-perimeter');
+  var a=document.getElementById('rectangle-area');
+  var wz=parseFloat(width.value);
+  var hz=parseFloat(height.value);
+  p.value=(wz+hz)*2;
+  a.value=wz*hz;
+}
 
-        $width.focusout(function() {
-              validate('.rectangle-width');
-                
-        });
-          
-        $height.focusout(function() {
-              validate('.rectangle-height');
-                
-        });
+width.onblur=function(){
+  var w=document.getElementById('w');
+  if(width.value==''){
+       w.innerHTML='请输入宽度';
+      }
+  else{
+    w.innerHTML='*';
+  }
+}
 
-        function perimeter(x, y) {
-              var lenX = (x.split('.').length === 2) ? x.split('.')[1].length : 0,
-                          lenY = (y.split('.').length === 2) ? y.split('.')[1].length : 0;
-
-                  var max = Math.max(lenX, lenY);
-                      return (x * (10 ** max) + y * (10 ** max)) * 2 / (10 ** max);
-                        
-        }
-
-        function area(x, y) {
-              var lenX = (x.split('.').length === 2) ? x.split('.')[1].length : 0,
-                          lenY = (y.split('.').length === 2) ? y.split('.')[1].length : 0;
-
-                  var max = Math.max(lenX, lenY);
-                      return (x * (10 ** max)) * (y * (10 ** max)) / (10 ** (2 * max));
-                        
-        }
-          
-        function validate(field) {
-              var $data = $(field),
-                        $message = $(field + '-validate'),
-                              label = $(field).attr('data-label');
-
-              if($data.val() === '') {
-                      $message.html(label + '不能为空！');
-                            $data.select();
-                                  return;
-                                      
-              }
-
-              if(!/^-?(0|[1-9]\d*)(\.\d*)?([eE][+-]?\d+)?$/.test($data.val())) {
-                      $message.html(label + '必须是数值');
-                            $data.select();
-                                  return;
-                                      
-              }
-
-              if(window.Number($data.val()) < 0) {
-                      $message.html(label + '必须大于零');
-                            $data.select();
-                                  return;
-                                      
-              }
-
-                  $message.html('');
-                    
-        }
-
-});
+height.onblur=function(){
+  var h=document.getElementById('h');
+  if(height.value=='')
+       {
+     h.innerHTML='请输入高度';
+    }
+  else{
+    h.innerHTML='*';
+  }
+}
 
 

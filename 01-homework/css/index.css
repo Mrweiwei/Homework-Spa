@@ -13,7 +13,7 @@ input[type="textbox"]{
   font-size:30px;
 }
 
-.rectangle-calc{
+#rectangle-calc{
   font-size:25px;
   margin-left:110px;
   margin-top:10px;
