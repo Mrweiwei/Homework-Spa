@@ -6,10 +6,15 @@ var calc=document.getElementById('rectangle-calc');
 calc.onclick=function(){
   var p=document.getElementById('rectangle-perimeter');
   var a=document.getElementById('rectangle-area');
+  
+  var x=width.value.replace('.','').length-parseFloat(width.value).toFixed(0).length;
+  var y=height.value.replace('.','').length-parseFloat(height.value).toFixed(0).length;
+  var max=Math.max(x,y);  
   var wz=parseFloat(width.value);
   var hz=parseFloat(height.value);
-  p.value=(wz+hz)*2;
-  a.value=wz*hz;
+  var m=10**max;
+  p.value=(wz*m+hz*m)*2/m;
+  a.value=wz*m*hz*m/(m*m);
 }
 
 width.onblur=function(){
