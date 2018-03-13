@@ -8,20 +8,20 @@
 <body>
 <div id="rectangle">
   <label>宽度：</label>
-  <input id="rectangle-width" type="textbox"  autofocus >
+  <input id="rectangle-width" type="number"  autofocus required step="0.1" >
   <span id="w">*</span>
   <br>
   <lable>高度：</lable>
-  <input id="rectangle-height" type="textbox" autofocus>
+  <input id="rectangle-height" type="number" autofocus required step="0.1" >
   <span id="h">*</span>
   <br>
   <input id="rectangle-calc" type="button" value="计算">
   <br>
   <lable>周长：</lable>
-  <input id="rectangle-perimeter" type="textbox" disabled>
+  <input id="rectangle-perimeter" type="number" disabled>
   <br>
   <lable>面积：</lable>
-  <input id="rectangle-area" type="textbox" disabled> 
+  <input id="rectangle-area" type="number" disabled> 
 </div>
 </body>
 <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>

@@ -7,7 +7,7 @@ span{
   color:red;
 }
 
-input[type="textbox"]{
+input[type="number"]{
   height:30px;
   width:300px;
   font-size:30px;
