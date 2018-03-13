@@ -8,9 +8,11 @@ window.onload=function(){
 
 
   start.onclick=function(){
+    window.clearInterval(time);
     time=window.setInterval(function(){
       bar.value++;
     },100);
+    
 
   }
   

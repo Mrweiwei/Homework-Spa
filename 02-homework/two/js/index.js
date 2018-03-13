@@ -4,7 +4,7 @@ var button=document.getElementById('button');
 
 button.onmouseover=function(){
   password.setAttribute('type','text');
-  
+  password.preventDefault();  
 
 }
 
