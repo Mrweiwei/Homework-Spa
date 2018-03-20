@@ -1,7 +1,8 @@
-window.onload=function() {
+
+$(function(){
   var editor = new Behave({
-        textarea: document.getElementById('textarea'),
-    replaceTab: true,
+        textarea: $('.main textarea').get(0),
+          replaceTab: true,
           softTabs: true,
           tabSize: 2,
           autoOpen: true,
@@ -11,21 +12,15 @@ window.onload=function() {
           fence: false
       
   });
-  
-    var button=document.getElementById('button');
-  button.onclick=function(){
-    var txt=document.getElementById('textarea');
-    var newpre=document.createElement('pre');
-    var main=document.getElementById('main');
-   if(txt.value==''){
-   pre.innerHTML=txt.value;
-    hljs.highlightBlock(newpre);
-      main.appendChild(newpre);
-    }
-    
-  }
-}
 
+  $('input[type="button"]').click(function() {
+        var $code = $('<div><pre class="javascript"></pre></div>'),
+          $txt = $('.main textarea');
 
-
-
+          if($txt.val() !== '') {
+                $code.find('pre').html($txt.val());
+                hljs.highlightBlock($code.find('pre').get(0));
+               $('.main').append($code);                         
+  }    
+  });
+});
